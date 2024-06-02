@@ -16,9 +16,10 @@ INSTALLED_APPS = [
 ```
 
 ## Setup
-In your `settings.py`, set the API key from Loco (get it [here](https://localise.biz/help/developers/api-keys))
+In your `settings.py`, set the API key from Loco (get it [here](https://localise.biz/help/developers/api-keys)) and the app that you want to translate
 ```python
 LOCO_API_KEY = ...
+LOCO_APP = "my_app"
 ```
 
 ## Usage

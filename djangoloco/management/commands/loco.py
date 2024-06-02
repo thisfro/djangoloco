@@ -7,6 +7,7 @@ from django.apps import apps
 from django.conf import settings
 
 LOCO_API_KEY = getattr(settings, 'LOCO_API_KEY', '')
+LOCO_APP = getattr(settings, 'LOCO_APP', '')
 API_URL = ' https://localise.biz/api/export/locale'
 
 
@@ -20,7 +21,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR('An API key is required'))
             return
 
-        app_config = apps.get_app_config('pflaenzli')
+        app_config = apps.get_app_config(LOCO_APP)
         app_path = app_config.path
 
         for locale in trans_real.get_languages():
